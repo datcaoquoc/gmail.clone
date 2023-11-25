@@ -1,0 +1,52 @@
+.logo-header{
+    height: 30px;
+}
+
+.header {
+    /* padding: 20px */
+    padding: 10px 50px;
+    width: 100%;
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 10px rgb(224, 224, 224);
+    z-index: 1000;
+}
+
+.logout{
+    text-decoration: none;
+    color: black;
+    font-weight: 14px;
+    background-color: #4cc3f6;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    gap: 10px;
+}
+
+.box-logo{
+    display: flex;
+    align-items: center;
+    gap: 40px
+}
+
+.btn-write{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background-color: #c2e7ff;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px #dcedf8;
+    font-weight: bold;
+
+}
+
+.btn-write > img {
+    height: 20px;
+}

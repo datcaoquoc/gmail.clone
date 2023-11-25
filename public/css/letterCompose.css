@@ -1,0 +1,72 @@
+.box-compose{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    height: auto;
+    width: 60%;
+    background-color: white;
+    border-radius: 8px 8px 0px 0px;
+    box-shadow: 1px 1px 10px rgb(186, 186, 186);
+    overflow: hidden;
+}
+
+.header-compose{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #abccfd;
+    padding: 10px 15px;
+}
+
+.input_form_compose{
+    border: none;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    outline: none;
+    width: 100%;
+    padding: 10px;
+}
+
+.select-compose{
+    border: none;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    outline: none;
+    width: 100%;
+    padding: 10px;
+}
+
+.form-compose{
+    padding: 10px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.content-compose{
+    height: 100%;
+}
+
+.input-file-compose{
+    margin-top: 10px;
+}
+
+.btn-send-compose{
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+    background-color: white;
+}
+
+.btn-send-compose > button {
+    border: none;
+    padding: 10px 30px;
+    background-color: #abccfd;
+    border-radius: 9px;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgb(201, 201, 201);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#close-compose {
+    cursor: pointer;
+}

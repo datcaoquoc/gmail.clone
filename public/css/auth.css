@@ -1,0 +1,80 @@
+.wrap {
+    width: 500px;
+    height: auto;
+    margin: auto;
+    padding: 30px 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(211, 211, 211);
+    backdrop-filter: blur(5px);
+}
+
+.container-content {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://blog.tcea.org/wp-content/uploads/2022/07/tidy-up-inbox-feature-image-1170x659.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title-wrap{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
+}
+
+.form-login{
+    margin-top: 10px;
+}
+
+.box-form{
+    margin-top: 10px;
+}
+
+.label-form{
+    color: aliceblue;
+}
+
+.box-form > input {
+    margin-top: 10px !important;
+}
+
+.btn-login {
+    padding: 10px;
+    background-color: rgba(0, 208, 255, 0.527);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 auto;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.link-register{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 34, 0, 0.584);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 auto;
+    font-weight: bold;
+    width: 100%;
+}
+
+.link-register > a {
+    background-color: transparent;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+

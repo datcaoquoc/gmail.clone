@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="../public/css/letterCompose.css">
+
+<div class="box-compose" id="form-box-compose">
+    <div class="header-compose">
+        <p>
+            Soạn thư
+        </p>
+
+        <div id="close-compose" onclick="closeFormCompose()">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50">
+                <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <form action="" class="form-compose">
+        <div class="box-form">
+            <select name="cars" id="selectUser" form="carform" class="select-compose">
+              </select>
+          </div>
+
+        <input
+              class="input_form_compose"
+              type="text"
+              id="title"
+              placeholder="Tiêu đề"
+              name="title"
+            />
+
+        <textarea rows="25" placeholder="Nội dung thư" class="input_form_compose content-compose" id="content" name="comment" form="usrform"></textarea>
+        <input class="input-file-compose" type="file" id="file" name="avatar" />
+    </form>
+
+    <div class="btn-send-compose" id="btn-send-letter">
+        <button onclick="sendFile()">Gửi thư</button>
+    </div>
+</div>
+
+<script>
+    const closeFormCompose = () => {
+        const boxCompose = document.getElementById('form-box-compose')
+      boxCompose.style.display = 'none'
+    }
+    const boxCompose = document.getElementById('form-box-compose')
+    // lấy danh sách user
+    const getAllUser = async () => {
+        const selectUser = document.getElementById('selectUser');
+        selectUser.innerHTML = '';
+        const dataUser = await fetch("http://localhost:8000/getAllUser").then(res => res.json())
+        if(dataUser){
+            const option = document.createElement('option');
+                option.text = 'Chọn người nhận';
+                option.value = '';
+                option.selected = true
+                selectUser.add(option);
+            dataUser.map(user => {
+                const option = document.createElement('option');
+                option.text = user.email;
+                option.value = user.id; 
+                selectUser.add(option);
+            })
+        }
+    }
+
+    // gọi hàm sau khi DOM được load xong
+    document.addEventListener('DOMContentLoaded', function() {
+    getAllUser();
+  });
+
+//   gửi thư
+    const btnSend = document.getElementById('btn-send-letter');
+    const selectUser = document.getElementById('selectUser');
+    const title = document.getElementById('title');
+    const content = document.getElementById('content');
+    const selectedFile = document.getElementById("file");
+
+    const sendFile = () => {
+        if(selectUser.value === '') {
+            return alert('Vui lòng chọn người nhận')
+        }
+        let formData = new FormData();
+            formData.append('file', selectedFile.files[0]);
+            formData.append('receiver', selectUser.value);
+            formData.append('title', title.value);
+            formData.append('content', content.value);
+            fetch('http://localhost:8000/send-letter', {
+                method: 'POST',
+                body: formData,
+            })
+                .then(res => res.json())
+                .then(res => {
+                    selectUser.value = ''
+                    title.value = ''
+                    content.value = ''
+                    selectedFile.value = ''
+                    closeFormCompose()
+                    alert(res.msg)             
+                    location.reload(true);  
+                })
+                .catch(err => {
+                    alert(res.msg) 
+                })
+    }
+        
+
+
+  </script>

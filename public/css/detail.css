@@ -1,0 +1,60 @@
+.content-container{
+    padding: 20px;
+}
+
+.title-detail-lette{
+    font-size: 22px;
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+}
+
+.avt-detail{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.info-user-detail-s{
+    display: flex;
+    gap: 10px; 
+}
+
+
+.info-user-detail{
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+
+    justify-content: space-between;
+}
+
+.name-detail > h3 {
+    font-weight: 600;
+}
+
+.name-detail > p, time {
+    font-size: 13px;
+}
+
+.time > p {
+    font-size: 12px;
+    color: rgb(95, 95, 95);
+}
+
+.content-letter{
+    padding-left: 50px;
+    margin-top: 20px;
+    border-top: 1px solid rgb(234, 233, 233);
+    padding-top: 20px;
+}
+.content-letter-attach {
+    padding-left: 50px;
+    margin-top: 20px;
+    border-top: 1px dashed rgb(234, 233, 233);
+    padding-top: 20px;
+}
+
+.dowload-file > a{
+    color: blue;
+    cursor: pointer;
+}

@@ -1,0 +1,36 @@
+.box-menu{
+    border-right: 1px solid rgb(196, 196, 196) !important;
+    height: calc(100vh - 90px);
+    background-color: white !important;
+}
+
+.menu-active{
+    background-color: rgba(0, 145, 255, 0.316);
+    border-radius: 0px 20px 20px 0px;
+    font-weight: bold;
+}
+
+.user{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border-bottom: 1px solid rgb(183, 183, 183);
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.user > img {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.user > p {
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}

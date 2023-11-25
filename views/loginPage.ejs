@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="stylesheet" href="/public/css/auth.css" />
+    <title>Đăng nhập tài khoản</title>
+  </head>
+  <body>
+    <div class="container-content">
+      <div class="wrap">
+        <h1 class="title-wrap">ĐĂNG NHẬP</h1>
+        
+        <form action="/login" method="POST" class="form-login">
+          <div class="box-form">
+            <label class="label-form" for="email">Tài khoản:</label><br />
+            <input
+              class="input_form"
+              type="text"
+              id="email"
+              placeholder="abc@gmail.com"
+              value="<%= email %>"
+              name="email"
+            /><br />
+          </div>
+          <div class="box-form">
+            <label class="label-form" for="pwd">Mật khẩu:</label><br />
+            <input
+              class="input_form"
+              type="password"
+              id="pwd"
+              value="<%= password %>"
+              name="pwd"
+            /><br /><br />
+          </div>
+          <% if(msg) { %>
+            <div class="type-mesage-error">
+              <%= msg %>
+            </div>
+          <% } %>
+          <input type="submit" class="btn-login" value="Đăng nhập" />
+        </form>
+
+        <div class="link-register">
+          <a href="/dang-ky">Đăng ký tài khoản</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

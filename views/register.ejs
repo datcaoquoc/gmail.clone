@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="stylesheet" href="/public/css/auth.css" />
+    <title>Đăng ký tài khoản</title>
+  </head>
+  <body>
+    <div class="container-content">
+      <div class="wrap">
+        <h1 class="title-wrap">ĐĂNG KÝ TÀI KHOẢN</h1>
+        
+        <form action="/register" method="POST" class="form-login">
+          <div class="box-form">
+            <label class="label-form" for="fullName">Họ và tên:</label><br />
+            <input
+              class="input_form"
+              type="text"
+              placeholder="Họ và tên"
+              id="fullName"
+              value="<%= fullName %>"
+              name="fullName"
+            /><br />
+          </div>
+          <div class="box-form">
+            <label class="label-form" for="email">Email:</label><br />
+            <input
+              class="input_form"
+              type="text"
+              id="email"
+              value="<%= email %>"
+              placeholder="abc@gmail.com"
+              name="email"
+            /><br />
+          </div>
+          <div class="box-form">
+            <label class="label-form" for="pwd">Mật khẩu:</label><br />
+            <input
+              class="input_form"
+              type="password"
+              id="pwd"
+              value="<%= password %>"
+              name="pwd"
+            /><br />
+          </div>
+          <div class="box-form">
+            <label class="label-form" for="rePwd">Nhập lại mật khẩu:</label><br />
+            <input
+              class="input_form"
+              type="password"
+              id="rePwd"
+              value="<%= rePassword %>"
+              name="rePwd"
+            /><br /><br />
+          </div>
+          <% if(msg) { %>
+            <div class='<%= type === "ERROR" ? "type-mesage-error" : "type-mesage-success" %>'>
+              <%= msg %>
+            </div>
+          <% } %>
+          <input type="submit" class="btn-login" value="Đăng ký tài khoản" />
+        </form>
+
+        <div class="link-register">
+          <a href="/">Tôi đã có tài khoản</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
